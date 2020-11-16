@@ -1,0 +1,55 @@
+#include "Arduino.h"
+#include <SensorHub.h>
+#define I2C_freq 400000
+float temperature,humidity,pressure,altitude,acc_x,acc_y,acc_z,roll,pitch;
+SensorHub SensorHub;
+
+void setup()
+{
+  Serial.begin(921600);
+  Serial.println("SensorHub!");
+  SensorHub.begin(I2C_freq);
+}
+void loop()
+{
+	temperature=SensorHub.getTemperature();
+	humidity=SensorHub.getHumidity();
+	pressure=SensorHub.getPressure();
+	altitude=SensorHub.getAltitude();
+	acc_x=SensorHub.getAccX();
+	acc_y=SensorHub.getAccY();
+	acc_z=SensorHub.getAccZ();
+	roll=SensorHub.getRoll();
+	pitch=SensorHub.getPitch();
+	Serial.print("Temperature: ");
+	Serial.print(temperature);
+	Serial.print(" °C");
+	Serial.print("\tRelative humidity: ");
+	Serial.print(humidity);
+	Serial.print(" %");
+	Serial.print("\tPressure: ");
+	Serial.print(pressure/100);
+	Serial.print(" hPa");
+	Serial.print("\tAltitude: ");
+	Serial.print(altitude);
+	Serial.println(" m");
+	Serial.print("ACC_X= ");
+	Serial.print(acc_x);
+	Serial.print("\tm/s²");
+	Serial.print("\tACC_Y= ");
+	Serial.print(acc_y);
+	Serial.print("\tm/s²");
+	Serial.print("\tACC_Z= ");
+	Serial.print(acc_z);
+	Serial.print("\tm/s²");
+	Serial.print("\tROLL= ");
+	Serial.print(roll);
+	Serial.print(" °");
+	Serial.print("\tPITCH= ");
+	Serial.print(pitch);
+	Serial.print(" °");
+	Serial.println();
+	//SensorHub.reset_bmp180();
+	//SensorHub.reset_sht21();
+	delay(2000);
+}
