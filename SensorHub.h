@@ -3,7 +3,7 @@
    This is a basic library for the sensors SHT21, BMP180 and MPU9150 embedded in the Sensor Hub Booster Pack.
 
    Note: The Sensor Hub has 2 more sensors, the ISL29023 and the TMP006, however i did not needed those for 
-   	 the project were i used the Sensor Hub, so i didn't include any code to communicate with those sensors.
+   	 the project i was working on, so i didn't include any code to communicate with those sensors.
    	 Feel free to complete the library with code for those sensors if you want.  
 
    Written by: Samuel Viegas
