@@ -81,7 +81,7 @@ bool SensorHub::mpu9150_config()
   	return true;  
   else
   {
-	snprintf(erro,sizeof(error),"%d collisions occurred on the I2C bus",cont);
+	snprintf(error,sizeof(error),"%d collisions occurred on the I2C bus",cont);
 	Serial.println(error);
 	return false;
   }   
@@ -168,7 +168,7 @@ bool SensorHub::read_cal_coef()
   	return true;  
   else
   {
-	snprintf(erro,sizeof(error),"%d collisions occurred on the I2C bus",cont);
+	snprintf(error,sizeof(error),"%d collisions occurred on the I2C bus",cont);
 	Serial.println(error);
 	return false;
   }
